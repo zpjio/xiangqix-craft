@@ -1,0 +1,49 @@
+<svg viewBox="0 0 1200 360" width="1200" height="360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="360" rx="14" fill="#150F0C" />
+  <rect x="12" y="12" width="1176" height="336" rx="10" fill="none" stroke="#3A281E" stroke-width="1" />
+
+  <!-- 1. 熟宣紫檀 -->
+  <g transform="translate(36, 32)">
+    <rect width="356" height="296" rx="10" fill="#2A1B14" stroke="#583B2B" stroke-width="2" />
+    <rect x="18" y="18" width="320" height="222" rx="4" fill="#DFC8A2" />
+    <rect x="34" y="32" width="288" height="194" fill="none" stroke="#2B221C" stroke-width="2.5" />
+    <line x1="34" y1="96"  x2="322" y2="96"  stroke="#2B221C" stroke-width="1.3" />
+    <line x1="34" y1="162" x2="322" y2="162" stroke="#2B221C" stroke-width="1.3" />
+    <line x1="130" y1="32" x2="226" y2="96"  stroke="#2B221C" stroke-width="1.2" stroke-dasharray="4 2" />
+    <line x1="226" y1="32" x2="130" y2="96"  stroke="#2B221C" stroke-width="1.2" stroke-dasharray="4 2" />
+    <text x="115" y="137" text-anchor="middle" fill="#3A2B21" font-family="'Kaiti SC', serif" font-size="22" font-weight="bold">楚 河</text>
+    <text x="242" y="137" text-anchor="middle" fill="#3A2B21" font-family="'Kaiti SC', serif" font-size="22" font-weight="bold">漢 界</text>
+    <text x="178" y="266" text-anchor="middle" fill="#F4EFE6" font-family="'Noto Serif SC', serif" font-size="15" font-weight="bold">壹 · 熟宣紫檀 (Xuan &amp; Rosewood)</text>
+    <text x="178" y="285" text-anchor="middle" fill="#9C8976" font-family="'Noto Serif SC', serif" font-size="11">陈年熟宣纸心 · 小叶紫檀重框 · 松烟墨线</text>
+  </g>
+
+  <!-- 2. 宫廷大漆 -->
+  <g transform="translate(422, 32)">
+    <rect width="356" height="296" rx="10" fill="#140B09" stroke="#6E5225" stroke-width="2" />
+    <rect x="18" y="18" width="320" height="222" rx="4" fill="#1A100E" />
+    <rect x="34" y="32" width="288" height="194" fill="none" stroke="#C8A252" stroke-width="2.5" />
+    <line x1="34" y1="96"  x2="322" y2="96"  stroke="#C8A252" stroke-width="1.3" />
+    <line x1="34" y1="162" x2="322" y2="162" stroke="#C8A252" stroke-width="1.3" />
+    <line x1="130" y1="32" x2="226" y2="96"  stroke="#C8A252" stroke-width="1.2" stroke-dasharray="4 2" />
+    <line x1="226" y1="32" x2="130" y2="96"  stroke="#C8A252" stroke-width="1.2" stroke-dasharray="4 2" />
+    <text x="115" y="137" text-anchor="middle" fill="#D4AF37" font-family="'Kaiti SC', serif" font-size="22" font-weight="bold">楚 河</text>
+    <text x="242" y="137" text-anchor="middle" fill="#D4AF37" font-family="'Kaiti SC', serif" font-size="22" font-weight="bold">漢 界</text>
+    <text x="178" y="266" text-anchor="middle" fill="#F4EFE6" font-family="'Noto Serif SC', serif" font-size="15" font-weight="bold">贰 · 宫廷大漆 (Imperial Lacquer)</text>
+    <text x="178" y="285" text-anchor="middle" fill="#9C8976" font-family="'Noto Serif SC', serif" font-size="11">推光黑漆底案 · 宫廷泥金描线 · 朱金辉映</text>
+  </g>
+
+  <!-- 3. 宋韵汝窑 -->
+  <g transform="translate(808, 32)">
+    <rect width="356" height="296" rx="10" fill="#1E2621" stroke="#425247" stroke-width="2" />
+    <rect x="18" y="18" width="320" height="222" rx="4" fill="#CBD5CC" />
+    <rect x="34" y="32" width="288" height="194" fill="none" stroke="#243028" stroke-width="2.5" />
+    <line x1="34" y1="96"  x2="322" y2="96"  stroke="#243028" stroke-width="1.3" />
+    <line x1="34" y1="162" x2="322" y2="162" stroke="#243028" stroke-width="1.3" />
+    <line x1="130" y1="32" x2="226" y2="96"  stroke="#243028" stroke-width="1.2" stroke-dasharray="4 2" />
+    <line x1="226" y1="32" x2="130" y2="96"  stroke="#243028" stroke-width="1.2" stroke-dasharray="4 2" />
+    <text x="115" y="137" text-anchor="middle" fill="#2C3B31" font-family="'Kaiti SC', serif" font-size="22" font-weight="bold">楚 河</text>
+    <text x="242" y="137" text-anchor="middle" fill="#2C3B31" font-family="'Kaiti SC', serif" font-size="22" font-weight="bold">漢 界</text>
+    <text x="178" y="266" text-anchor="middle" fill="#F4EFE6" font-family="'Noto Serif SC', serif" font-size="15" font-weight="bold">叁 · 宋韵汝窑 (Song Celadon)</text>
+    <text x="178" y="285" text-anchor="middle" fill="#9C8976" font-family="'Noto Serif SC', serif" font-size="11">雨过天青瓷釉 · 极简宋画气韵 · 苍翠墨线</text>
+  </g>
+</svg>

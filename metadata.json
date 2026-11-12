@@ -1,0 +1,6 @@
+{
+  "name": "楚河汉界 · 中国象棋视觉与博弈雅集",
+  "description": "基于 SVG + DOM + CSS 混合渲染架构的东方古典中国象棋棋盘与棋子视觉设计系统及对弈台，融合紫檀木案、陈年宣纸、阴刻描金木雕棋子与传统色体系。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

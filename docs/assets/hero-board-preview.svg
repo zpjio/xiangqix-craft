@@ -1,0 +1,331 @@
+<svg viewBox="0 0 1200 720" width="1200" height="720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背景深紫檀渐变 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1410" />
+      <stop offset="50%" stop-color="#140E0B" />
+      <stop offset="100%" stop-color="#0E0A08" />
+    </linearGradient>
+
+    <!-- 紫檀木棋盘外框渐变 -->
+    <linearGradient id="zitanFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A241B" />
+      <stop offset="50%" stop-color="#261711" />
+      <stop offset="100%" stop-color="#1A0F0B" />
+    </linearGradient>
+
+    <!-- 陈年熟宣纸盘心径向渐变 -->
+    <radialGradient id="xuanSurface" cx="50%" cy="48%" r="65%">
+      <stop offset="0%" stop-color="#E6D2B0" />
+      <stop offset="65%" stop-color="#DBC299" />
+      <stop offset="100%" stop-color="#C8AA7A" />
+    </radialGradient>
+
+    <!-- 红方黄杨木棋子渐变 -->
+    <radialGradient id="redToken" cx="32%" cy="28%" r="70%">
+      <stop offset="0%" stop-color="#F5E3C8" />
+      <stop offset="45%" stop-color="#DFC196" />
+      <stop offset="82%" stop-color="#C29B68" />
+      <stop offset="100%" stop-color="#967144" />
+    </radialGradient>
+
+    <!-- 黑方乌木棋子渐变 -->
+    <radialGradient id="blackToken" cx="32%" cy="28%" r="70%">
+      <stop offset="0%" stop-color="#423934" />
+      <stop offset="48%" stop-color="#26201D" />
+      <stop offset="85%" stop-color="#161210" />
+      <stop offset="100%" stop-color="#0B0908" />
+    </radialGradient>
+
+    <!-- 棋子投影 -->
+    <filter id="pieceShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#0D0704" flood-opacity="0.72" />
+    </filter>
+  </defs>
+
+  <!-- 整体画布底色 -->
+  <rect width="1200" height="720" fill="url(#bgGrad)" rx="16" />
+  <rect x="16" y="16" width="1168" height="688" fill="none" stroke="#3A281E" stroke-width="1" rx="12" />
+
+  <!-- ==================== 左侧：九路十线紫檀宣纸棋盘主视觉 ==================== -->
+  <g transform="translate(56, 36)">
+    <!-- 紫檀木案外框 -->
+    <rect x="0" y="0" width="560" height="648" rx="12" fill="url(#zitanFrame)" stroke="#583B2B" stroke-width="2" />
+    <!-- 四角黄铜回纹包角 -->
+    <path d="M 8 24 L 8 8 L 24 8" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.65" />
+    <path d="M 536 8 L 552 8 L 552 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.65" />
+    <path d="M 8 624 L 8 640 L 24 640" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.65" />
+    <path d="M 536 640 L 552 640 L 552 624" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.65" />
+
+    <!-- 宣纸内芯 (520 x 608) -->
+    <rect x="20" y="20" width="520" height="608" rx="4" fill="url(#xuanSurface)" />
+
+    <!-- 棋盘网格原点：(64, 58)，格距 STEP = 54 (宽 8*54=432, 高 9*54=486) -->
+    <!-- 外粗内细重框 -->
+    <rect x="57" y="51" width="446" height="500" fill="none" stroke="#2B221C" stroke-width="3" stroke-opacity="0.9" />
+    <rect x="64" y="58" width="432" height="486" fill="none" stroke="#2B221C" stroke-width="1.5" />
+
+    <!-- 十条横线 -->
+    <g stroke="#2B221C" stroke-width="1.3" stroke-opacity="0.86">
+      <line x1="64" y1="58"  x2="496" y2="58"  stroke-width="2" />
+      <line x1="64" y1="112" x2="496" y2="112" />
+      <line x1="64" y1="166" x2="496" y2="166" />
+      <line x1="64" y1="220" x2="496" y2="220" />
+      <line x1="64" y1="274" x2="496" y2="274" stroke-width="2" />
+      <line x1="64" y1="328" x2="496" y2="328" stroke-width="2" />
+      <line x1="64" y1="382" x2="496" y2="382" />
+      <line x1="64" y1="436" x2="496" y2="436" />
+      <line x1="64" y1="490" x2="496" y2="490" />
+      <line x1="64" y1="544" x2="496" y2="544" stroke-width="2" />
+    </g>
+
+    <!-- 九条纵线（中界断开，边线贯通） -->
+    <g stroke="#2B221C" stroke-width="1.3" stroke-opacity="0.86">
+      <line x1="64"  y1="58" x2="64"  y2="544" stroke-width="2" />
+      <line x1="496" y1="58" x2="496" y2="544" stroke-width="2" />
+      <!-- 北岸内纵线 -->
+      <line x1="118" y1="58" x2="118" y2="274" />
+      <line x1="172" y1="58" x2="172" y2="274" />
+      <line x1="226" y1="58" x2="226" y2="274" />
+      <line x1="280" y1="58" x2="280" y2="274" />
+      <line x1="334" y1="58" x2="334" y2="274" />
+      <line x1="388" y1="58" x2="388" y2="274" />
+      <line x1="442" y1="58" x2="442" y2="274" />
+      <!-- 南岸内纵线 -->
+      <line x1="118" y1="328" x2="118" y2="544" />
+      <line x1="172" y1="328" x2="172" y2="544" />
+      <line x1="226" y1="328" x2="226" y2="544" />
+      <line x1="280" y1="328" x2="280" y2="544" />
+      <line x1="334" y1="328" x2="334" y2="544" />
+      <line x1="388" y1="328" x2="388" y2="544" />
+      <line x1="442" y1="328" x2="442" y2="544" />
+    </g>
+
+    <!-- 南北九宫米字斜线 -->
+    <g stroke="#2B221C" stroke-width="1.3" stroke-dasharray="4 2" stroke-opacity="0.8">
+      <line x1="226" y1="58"  x2="334" y2="166" />
+      <line x1="334" y1="58"  x2="226" y2="166" />
+      <line x1="226" y1="436" x2="334" y2="544" />
+      <line x1="334" y1="436" x2="226" y2="544" />
+    </g>
+
+    <!-- 楚河汉界与朱文印章 -->
+    <text x="165" y="311" text-anchor="middle" fill="#3A2B21" font-family="'Kaiti SC', 'STKaiti', 'Noto Serif SC', serif" font-size="28" font-weight="bold" letter-spacing="10">楚河</text>
+    <g transform="translate(268, 289)">
+      <rect width="24" height="24" rx="2" fill="#9E2A2B" />
+      <text x="12" y="16" text-anchor="middle" fill="#F4EFE6" font-family="serif" font-size="11" font-weight="bold">雅</text>
+    </g>
+    <text x="395" y="311" text-anchor="middle" fill="#3A2B21" font-family="'Kaiti SC', 'STKaiti', 'Noto Serif SC', serif" font-size="28" font-weight="bold" letter-spacing="10">漢界</text>
+
+    <!-- 底部红方九路汉字坐标 -->
+    <g fill="#2B221C" fill-opacity="0.75" font-family="serif" font-size="13" font-weight="bold" text-anchor="middle">
+      <text x="64"  y="572">九</text>
+      <text x="118" y="572">八</text>
+      <text x="172" y="572">七</text>
+      <text x="226" y="572">六</text>
+      <text x="280" y="572">五</text>
+      <text x="334" y="572">四</text>
+      <text x="388" y="572">三</text>
+      <text x="442" y="572">二</text>
+      <text x="496" y="572">一</text>
+    </g>
+
+    <!-- 代表性棋子布局（当头炮对屏风马经典阵势） -->
+    <!-- 黑方底线与屏风马 -->
+    <g filter="url(#pieceShadow)" font-family="'Noto Serif SC', 'Kaiti SC', serif" font-weight="900" font-size="18" text-anchor="middle">
+      <!-- 黑將 (280, 58) -->
+      <g transform="translate(280, 58)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <polygon points="0,-16 11,-11 16,0 11,11 0,16 -11,11 -16,0 -11,-11" fill="none" stroke="#D4AF37" stroke-width="0.8" />
+        <text y="6" fill="#DFB654">將</text>
+      </g>
+      <!-- 黑士 (226, 58) & (334, 58) -->
+      <g transform="translate(226, 58)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">士</text>
+      </g>
+      <g transform="translate(334, 58)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">士</text>
+      </g>
+      <!-- 黑象 (172, 58) & (388, 58) -->
+      <g transform="translate(172, 58)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">象</text>
+      </g>
+      <g transform="translate(388, 58)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">象</text>
+      </g>
+      <!-- 黑屏风双馬 (172, 166) & (388, 166) -->
+      <g transform="translate(172, 166)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">馬</text>
+      </g>
+      <g transform="translate(388, 166)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">馬</text>
+      </g>
+      <!-- 黑車 (118, 58) & (496, 58) -->
+      <g transform="translate(118, 58)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">車</text>
+      </g>
+      <g transform="translate(496, 58)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">車</text>
+      </g>
+      <!-- 黑砲 (118, 166) & (442, 166) -->
+      <g transform="translate(118, 166)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">砲</text>
+      </g>
+      <g transform="translate(442, 166)">
+        <circle r="22" fill="url(#blackToken)" />
+        <circle r="19" fill="none" stroke="#D4AF37" stroke-width="1.2" />
+        <text y="6" fill="#DFB654">砲</text>
+      </g>
+
+      <!-- 红方当头炮与底线阵列 -->
+      <!-- 红中炮 (280, 436) 带朱砂落子气浪环与散落微尘 -->
+      <g transform="translate(280, 436)">
+        <circle r="28" fill="none" stroke="#C8372D" stroke-width="1.5" stroke-dasharray="3 3" />
+        <circle cx="-26" cy="-14" r="2.2" fill="#C8372D" />
+        <circle cx="28" cy="-10" r="1.8" fill="#DFC196" />
+        <circle cx="22" cy="20" r="2" fill="#C8372D" />
+        <circle cx="-22" cy="18" r="1.6" fill="#8C5A36" />
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <circle r="16.5" fill="none" stroke="#9E2A2B" stroke-width="0.7" />
+        <text y="6" fill="#A62222">炮</text>
+      </g>
+      <!-- 红左炮 (118, 436) -->
+      <g transform="translate(118, 436)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">炮</text>
+      </g>
+      <!-- 红正傌 (388, 436) -->
+      <g transform="translate(388, 436)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">傌</text>
+      </g>
+      <!-- 红帥 (280, 544) -->
+      <g transform="translate(280, 544)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <circle r="16.5" fill="none" stroke="#9E2A2B" stroke-width="0.8" stroke-dasharray="3 2" />
+        <text y="6" fill="#A62222">帥</text>
+      </g>
+      <!-- 红仕 (226, 544) & (334, 544) -->
+      <g transform="translate(226, 544)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">仕</text>
+      </g>
+      <g transform="translate(334, 544)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">仕</text>
+      </g>
+      <!-- 红相 (172, 544) & (388, 544) -->
+      <g transform="translate(172, 544)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">相</text>
+      </g>
+      <g transform="translate(388, 544)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">相</text>
+      </g>
+      <!-- 红俥 (64, 544) & (442, 544) -->
+      <g transform="translate(64, 544)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">俥</text>
+      </g>
+      <g transform="translate(442, 544)">
+        <circle r="22" fill="url(#redToken)" />
+        <circle r="19" fill="none" stroke="#9E2A2B" stroke-width="1.3" />
+        <text y="6" fill="#A62222">俥</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== 右侧：象棋考工 (XiangqiX UI) 视觉与架构图解 ==================== -->
+  <g transform="translate(656, 52)" font-family="'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif">
+    <text x="0" y="20" fill="#D4AF37" font-size="13" font-weight="bold" letter-spacing="3">
+      XIANGQIX ECOSYSTEM · OFFICIAL VISUAL ENGINE
+    </text>
+    <text x="0" y="64" fill="#F4EFE6" font-size="34" font-weight="bold" letter-spacing="1.5">
+      象棋考工 · XiangqiX Craft UI
+    </text>
+    <text x="0" y="98" fill="#B8A692" font-size="15">
+      基于 SVG + DOM + CSS 混合渲染架构的中国象棋东方造物设计系统
+    </text>
+
+    <line x1="0" y1="122" x2="480" y2="122" stroke="#3A281E" stroke-width="1" />
+
+    <!-- 核心规范卡片 1 -->
+    <g transform="translate(0, 144)">
+      <rect width="484" height="104" rx="10" fill="#1F1612" stroke="#3E2B20" stroke-width="1" />
+      <text x="22" y="34" fill="#D4AF37" font-size="16" font-weight="bold">01. 九路十线 · 楚河汉界矢量案几 (SVG Layer)</text>
+      <text x="22" y="62" fill="#C2B09C" font-size="13">外粗内细双层重框、南北九宫米字斜线、14 处炮/兵卒直角折角花标</text>
+      <text x="22" y="84" fill="#9C8976" font-size="12">支持「熟宣紫檀」「宫廷大漆」「宋韵汝窑」三套东方传统器物材质切换</text>
+    </g>
+
+    <!-- 核心规范卡片 2 -->
+    <g transform="translate(0, 266)">
+      <rect width="484" height="104" rx="10" fill="#1F1612" stroke="#3E2B20" stroke-width="1" />
+      <text x="22" y="34" fill="#E25B4B" font-size="16" font-weight="bold">02. 红黑阵营色彩与几何双重微差 (Hybrid Token)</text>
+      <text x="22" y="62" fill="#C2B09C" font-size="13">红方：温润黄杨木胎 + 辰州朱砂阴刻 + 双同心圆环与四极海棠菱花</text>
+      <text x="22" y="84" fill="#C2B09C" font-size="13">黑方：沉穆乌木胎体 + 宫廷赤金描金 + 外圆内正八边形玄甲虎符框</text>
+    </g>
+
+    <!-- 核心规范卡片 3 -->
+    <g transform="translate(0, 388)">
+      <rect width="484" height="104" rx="10" fill="#1F1612" stroke="#3E2B20" stroke-width="1" />
+      <text x="22" y="34" fill="#D4AF37" font-size="16" font-weight="bold">03. 朱砂微尘散落与空间木纹声学 (Physics &amp; Audio)</text>
+      <text x="22" y="62" fill="#C2B09C" font-size="13">CSS 合成器驱动落子瞬间朱砂粉尘与细木屑径向抛射、吃子双环气浪</text>
+      <text x="22" y="84" fill="#9C8976" font-size="12">Web Audio 实时计算盘心空腔浑厚共鸣 (175Hz) 与紫檀边廓清脆刚音 (275Hz)</text>
+    </g>
+
+    <!-- 底部东方传统色卡展示 -->
+    <g transform="translate(0, 518)">
+      <text x="0" y="18" fill="#C8A252" font-size="12" font-weight="bold" letter-spacing="2">
+        TRADITIONAL CHINESE MINERAL &amp; WOOD PALETTE · 东方传统色系
+      </text>
+      <g transform="translate(0, 32)">
+        <rect x="0"   y="0" width="72" height="54" rx="6" fill="#A62626" stroke="#ffffff22" />
+        <text x="36"  y="72" text-anchor="middle" fill="#C2B09C" font-size="11">辰州朱砂</text>
+
+        <rect x="82"  y="0" width="72" height="54" rx="6" fill="#D4AF37" stroke="#ffffff22" />
+        <text x="118" y="72" text-anchor="middle" fill="#C2B09C" font-size="11">赤金泥金</text>
+
+        <rect x="164" y="0" width="72" height="54" rx="6" fill="#DFC196" stroke="#ffffff22" />
+        <text x="200" y="72" text-anchor="middle" fill="#C2B09C" font-size="11">温润黄杨</text>
+
+        <rect x="246" y="0" width="72" height="54" rx="6" fill="#DFC8A2" stroke="#ffffff22" />
+        <text x="282" y="72" text-anchor="middle" fill="#C2B09C" font-size="11">陈年熟宣</text>
+
+        <rect x="328" y="0" width="72" height="54" rx="6" fill="#2C1E18" stroke="#ffffff33" />
+        <text x="364" y="72" text-anchor="middle" fill="#C2B09C" font-size="11">小叶紫檀</text>
+
+        <rect x="410" y="0" width="72" height="54" rx="6" fill="#3E6B52" stroke="#ffffff22" />
+        <text x="446" y="72" text-anchor="middle" fill="#C2B09C" font-size="11">青白玉色</text>
+      </g>
+    </g>
+  </g>
+</svg>

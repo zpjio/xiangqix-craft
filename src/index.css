@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* 东方传统色彩体系 (Eastern Traditional Color System) */
+    --color-zitan-deep: #1A1412;      /* 紫檀深底 */
+    --color-zitan-frame: #2C1E18;     /* 小叶紫檀外框 */
+    --color-huali-wood: #4A3022;      /* 黄花梨木纹 */
+    --color-xuan-paper: #DFC8A2;      /* 陈年熟宣棋盘心 */
+    --color-xuan-aged: #D2B78A;       /* 宣纸暗部晕染 */
+    --color-song-ink: #1F1D1A;        /* 松烟墨（网格与黑子） */
+    --color-zhusha-red: #A62626;      /* 纯正朱砂（红方主色） */
+    --color-yinzhu-bright: #C8372D;   /* 银朱（红方高光） */
+    --color-chijin-gold: #D4AF37;     /* 赤金/泥金（描金光泽） */
+    --color-qingbai-jade: #6B8E78;    /* 青白玉（合法落子提示） */
+  }
+
+  body {
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    background-color: #16110E;
+    color: #EAE0D0;
+    overflow-x: hidden;
+  }
+}
+
+/* 书法字体工具类 */
+.font-calligraphy {
+  font-family: "Ma Shan Zheng", "Kaiti SC", "STKaiti", serif;
+}
+
+.font-cursive {
+  font-family: "Zhi Mang Xing", "Ma Shan Zheng", cursive, serif;
+}
+
+.font-serif-sc {
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+
+/* 棋子立体木雕旋纹与阴刻内阴影 */
+.piece-token-red {
+  background: radial-gradient(
+    circle at 32% 28%,
+    #F3DFC1 0%,
+    #DFC196 42%,
+    #C5A06E 78%,
+    #9C784C 100%
+  );
+  box-shadow:
+    0 6px 12px -2px rgba(15, 8, 4, 0.72),
+    0 2px 4px rgba(15, 8, 4, 0.55),
+    inset 0 2px 3px rgba(255, 248, 231, 0.75),
+    inset 0 -3px 6px rgba(92, 60, 28, 0.65);
+}
+
+.piece-token-black {
+  background: radial-gradient(
+    circle at 32% 28%,
+    #3D3530 0%,
+    #26201D 45%,
+    #181412 80%,
+    #0E0B0A 100%
+  );
+  box-shadow:
+    0 6px 12px -2px rgba(10, 6, 3, 0.8),
+    0 2px 4px rgba(10, 6, 3, 0.6),
+    inset 0 2px 3px rgba(255, 255, 255, 0.18),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* 乌木泥金款棋子皮肤 */
+.piece-ebony-red {
+  background: radial-gradient(
+    circle at 32% 28%,
+    #4E1E1B 0%,
+    #361210 48%,
+    #240A09 82%,
+    #160504 100%
+  );
+  box-shadow:
+    0 6px 12px -2px rgba(10, 6, 3, 0.8),
+    0 2px 4px rgba(10, 6, 3, 0.6),
+    inset 0 2px 3px rgba(255, 200, 180, 0.22),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* 羊脂白玉款棋子皮肤 */
+.piece-jade-red,
+.piece-jade-black {
+  background: radial-gradient(
+    circle at 32% 28%,
+    #FAF6EE 0%,
+    #ECE4D4 48%,
+    #D6CBB8 84%,
+    #B8AA93 100%
+  );
+  box-shadow:
+    0 6px 12px -2px rgba(20, 14, 8, 0.65),
+    0 2px 4px rgba(20, 14, 8, 0.45),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9),
+    inset 0 -3px 6px rgba(130, 115, 95, 0.5);
+}
+
+/* 阴刻汉字凹槽光效 */
+.engraved-red-char {
+  color: #A62222;
+  text-shadow:
+    0 1px 0 rgba(255, 245, 225, 0.7),
+    0 -1px 1px rgba(70, 10, 10, 0.65);
+}
+
+.engraved-gold-char {
+  color: #DFB654;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.85),
+    0 0 6px rgba(212, 175, 55, 0.25);
+}
+
+.engraved-crimson-gold-char {
+  color: #E85D4A;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.9),
+    0 0 6px rgba(232, 93, 74, 0.3);
+}
+
+.engraved-ink-char {
+  color: #1C1917;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.75),
+    0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* 紫檀木案边框立体浮雕 */
+.zitan-board-frame {
+  background: linear-gradient(145deg, #362219 0%, #241610 50%, #1B100C 100%);
+  box-shadow:
+    0 24px 48px -12px rgba(0, 0, 0, 0.85),
+    0 8px 20px -4px rgba(0, 0, 0, 0.7),
+    inset 0 1px 2px rgba(212, 175, 55, 0.28),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ==================== 落子物理碰撞：朱砂粉尘与木屑散落特效 (CSS Compositor Animations) ==================== */
+@keyframes xiangqi-dust-scatter {
+  0% {
+    opacity: 0.95;
+    transform: translate3d(0, 0, 0) scale(0.45) rotate(0deg);
+  }
+  28% {
+    opacity: 0.92;
+    transform: translate3d(calc(var(--tx) * 0.68), calc(var(--ty) * 0.68), 0)
+      scale(var(--scale, 1)) rotate(calc(var(--rot) * 0.6));
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--tx), var(--ty), 0) scale(0.15) rotate(var(--rot));
+  }
+}
+
+@keyframes xiangqi-impact-ring {
+  0% {
+    opacity: 0.82;
+    transform: scale(0.65);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.65);
+  }
+}
+
+@keyframes xiangqi-piece-land {
+  0% {
+    transform: translate3d(0, -7px, 0) scale(1.14);
+  }
+  55% {
+    transform: translate3d(0, 1px, 0) scale(0.97);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-dust-particle {
+  animation: xiangqi-dust-scatter var(--dur, 560ms) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-impact-ring {
+  animation: xiangqi-impact-ring 480ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-piece-land {
+  animation: xiangqi-piece-land 190ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dust-particle,
+  .animate-impact-ring,
+  .animate-piece-land {
+    animation: none !important;
+  }
+}
+
