@@ -92,7 +92,7 @@ export const XiangqiPiece: React.FC<XiangqiPieceProps> = ({
         />
       )}
 
-      {/* SVG 阴刻纹饰层：红方“双弦重环·四极海棠星”，黑方“外圆内八角·玄甲竹节纹” */}
+      {/* SVG 阴刻纹饰与汉字层：红方“双弦重环·四极海棠星”，黑方“外圆内八角·玄甲竹节纹” */}
       <svg
         viewBox="0 0 100 100"
         className="absolute inset-0 w-full h-full pointer-events-none"
@@ -170,16 +170,22 @@ export const XiangqiPiece: React.FC<XiangqiPieceProps> = ({
             strokeOpacity="0.45"
           />
         )}
-      </svg>
 
-      {/* 核心汉字阴刻层 */}
-      <span
-        className={`relative z-10 leading-none tracking-tight select-none pointer-events-none ${getFontClass(
-          fontScheme
-        )} ${getCharClass(piece.camp, craftStyle)} text-[1.45rem] sm:text-[1.7rem] md:text-[1.95rem]`}
-      >
-        {char}
-      </span>
+        {/* 核心汉字阴刻层：与纹饰同处 100×100 SVG 坐标系，确保缩放时严格等比同步 */}
+        <text
+          x="50"
+          y="50"
+          textAnchor="middle"
+          dominantBaseline="central"
+          fontSize="48"
+          fill="currentColor"
+          className={`select-none pointer-events-none ${getFontClass(
+            fontScheme
+          )} ${getCharClass(piece.camp, craftStyle)}`}
+        >
+          {char}
+        </text>
+      </svg>
     </button>
   );
 };
